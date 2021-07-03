@@ -2,7 +2,7 @@ name: Crunchbase dashboard Cron Workflow
 
 on:
   schedule:
-  - cron: "0 19 * * 1-5"
+  - cron: "10/10 2 * * 1-5"
 
 jobs:
   run-Crunchbase-python:
