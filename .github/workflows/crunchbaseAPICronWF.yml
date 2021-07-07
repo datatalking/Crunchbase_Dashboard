@@ -10,6 +10,6 @@ jobs:
     steps: 
       - name: Execute Cruncbase API script
         run: |
-          python ./pythonScripts/OC_Crunchbase_Queries.ipynb
+          python OC_Crunchbase_Queries.ipynb
         shell: python
 
