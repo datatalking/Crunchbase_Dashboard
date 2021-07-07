@@ -2,7 +2,7 @@ name: Crunchbase dashboard Cron Workflow
 
 on:
   schedule:
-  - cron: "5/5 1 * * *"
+  - cron: "0/5 * * * *"
 
 jobs:
   run-Crunchbase-python:
@@ -17,8 +17,9 @@ jobs:
           python-version: '3.x' # install the python version needed
     
       - name: Execute Cruncbase API script
-        run: |
-          python OC_Crunchbase_Queries.ipynb
+        uses: yaananth/run-notebook@v1
+        with:
+          notebook: "OC_Crunchbase_Queries.ipynb.ipynb"
         
       - name: commit files
         run: |
