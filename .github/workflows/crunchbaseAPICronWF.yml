@@ -2,7 +2,7 @@ name: Crunchbase dashboard Cron Workflow
 
 on:
   schedule:
-  - cron: "10/10 * * * *"
+  - cron: "5/5 * * * *"
 
 jobs:
   run-Crunchbase-python:
@@ -10,6 +10,6 @@ jobs:
     steps: 
       - name: Execute Cruncbase API script
         run: |
-          python pythonScripts/OC_Crunchbase_Queries.ipynb
+          python ./pythonScripts/OC_Crunchbase_Queries.ipynb
         shell: python
 
