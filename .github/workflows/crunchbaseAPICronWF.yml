@@ -2,7 +2,7 @@ name: Crunchbase dashboard Cron Workflow
 
 on:
   schedule:
-  - cron: "0/5 1 * * *"
+  - cron: "0/5 * * * *"
 
 jobs:
   run-Crunchbase-python:
@@ -18,6 +18,10 @@ jobs:
     
       - name: Execute Cruncbase API script
         uses: yaananth/run-notebook@v1
+        env:
+          RUNNER: ${{ toJson(runner) }}
+          SECRETS: ${{ toJson(secrets) }}
+          GITHUB: ${{ toJson(github) }}
         with:
           notebook: "OC_Crunchbase_Queries.ipynb.ipynb"
         
