@@ -15,6 +15,7 @@
 
 import requests
 import pandas as pd
+import boto3
 import sys
 import json
 import csv
@@ -318,6 +319,17 @@ master_clean_orgs["location_city"] = master_clean_orgs["location_identifiers"].a
 fileNameOrgs = "crunchbase_organizations_" + get_date() + ".csv"
 master_clean_orgs.to_csv(fileNameOrgs)
 
+
+# Write to Amazon S3
+s3 = boto3.resource(
+    service_name='s3',
+    region_name='us-west-1',
+    aws_access_key_id='AKIAQAFQCVI6QFETODIQ',
+    aws_secret_access_key='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'
+)
+
+# Upload files to S3 bucket
+s3.Bucket('crunchbase-dashboard').upload_file(Filename=fileNameOrgs, Key=fileNameOrgs)
 
 # In[ ]:
 

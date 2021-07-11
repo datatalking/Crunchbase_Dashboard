@@ -21,6 +21,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
           pip install pandas
+          pip install boto3
           
       - name: Execute Cruncbase API script
         run:
