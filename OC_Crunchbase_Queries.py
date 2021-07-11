@@ -36,10 +36,10 @@ def csv_to_list(file_path,column_names,col_name):
     return transformed_list
 
 # Create lists of cities and category groups (organization industries) to use as a filter in query
-city_uuids = csv_to_list('C:/Users/lourd/Desktop/Crunchbase_project/cities_uuids.csv',["City", "UUID"],"UUID")
-city_names = csv_to_list('C:/Users/lourd/Desktop/Crunchbase_project/cities_uuids.csv',["City", "UUID"],"City")
-categories_uuids = csv_to_list('C:/Users/lourd/Desktop/Crunchbase_project/categories_uuids_new.csv',["Category", "UUID"],"UUID")
-categories_names = csv_to_list('C:/Users/lourd/Desktop/Crunchbase_project/categories_uuids_new.csv',["Category", "UUID"],"Category")
+city_uuids = csv_to_list('cities_uuids.csv',["City", "UUID"],"UUID")
+city_names = csv_to_list('cities_uuids.csv',["City", "UUID"],"City")
+categories_uuids = csv_to_list('categories_uuids_new.csv',["Category", "UUID"],"UUID")
+categories_names = csv_to_list('categories_uuids_new.csv',["Category", "UUID"],"Category")
 
 
 # ### Define keys/URLs
