@@ -34,12 +34,12 @@ jobs:
         #with:
          # notebook: "OC_Crunchbase_Queries.ipynb.ipynb"
         
-      - name: commit files
-        run: |
-          git add -A
-          git commit -m "update data" -a
+     # - name: commit files
+     #   run: |
+     #     git add -A
+     #     git commit -m "update data" -a
           
-      - name: push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          branch: main  
+     # - name: push changes
+     #   uses: ad-m/github-push-action@v0.6.0
+     #   with:
+     #     branch: main  
