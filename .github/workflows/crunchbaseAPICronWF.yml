@@ -21,8 +21,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
           pip install pandas
-          pip install csv
-
+          
       - name: Execute Cruncbase API script
         run:
           python OC_Crunchbase_Queries.py
