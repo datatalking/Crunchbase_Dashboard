@@ -292,16 +292,16 @@ master_clean_orgs["location_city"] = master_clean_orgs["location_identifiers"].a
 # Drop columns we don't need
 
 # Update after query is working
-cols_to_drop_orgs = ["properties."]
+#cols_to_drop_orgs = ["properties."]
 
-master_clean_funding.columns = master_clean_funding.columns.str.replace('properties.','')
-master_clean_funding.columns = master_clean_funding.columns.str.replace('.value','')
-master_clean_funding.columns = master_clean_funding.columns.str.replace('_usd','')
+#master_clean_funding.columns = master_clean_funding.columns.str.replace('properties.','')
+#master_clean_funding.columns = master_clean_funding.columns.str.replace('.value','')
+#master_clean_funding.columns = master_clean_funding.columns.str.replace('_usd','')
 
-master_clean_funding["revenue_range"] = master_clean_funding["revenue_range"].map(revenue_ranges).astype(str)
-master_clean_funding["num_employees_range"] = master_clean_funding["num_employees_enum"].map(employee_ranges).astype(str)
-master_clean_funding["categories"] = master_clean_funding["categories"].apply(lambda x: list(map(itemgetter('value'), x)if isinstance(x, list) else ["Not found"])).apply(lambda x : ",".join(map(str, x))) # WHICH IS RIGHT?? THIS OR CATEGORY GROUPS?
-master_clean_funding["location_city"] = master_clean_funding["location_identifiers"].apply(lambda x: list(map(itemgetter('value'), x)if isinstance(x, list) else ["Not found"])).apply(lambda x : ",".join(map(str, x))) # WHICH IS RIGHT?? THIS OR CATEGORY GROUPS?
+#master_clean_funding["revenue_range"] = master_clean_funding["revenue_range"].map(revenue_ranges).astype(str)
+#master_clean_funding["num_employees_range"] = master_clean_funding["num_employees_enum"].map(employee_ranges).astype(str)
+#master_clean_funding["categories"] = master_clean_funding["categories"].apply(lambda x: list(map(itemgetter('value'), x)if #isinstance(x, list) else ["Not found"])).apply(lambda x : ",".join(map(str, x))) # WHICH IS RIGHT?? THIS OR CATEGORY GROUPS?
+#master_clean_funding["location_city"] = master_clean_funding["location_identifiers"].apply(lambda x: #list(map(itemgetter('value'), x)if isinstance(x, list) else ["Not found"])).apply(lambda x : ",".join(map(str, x))) # WHICH IS #RIGHT?? THIS OR CATEGORY GROUPS?
 
 
 # ### Save Data
