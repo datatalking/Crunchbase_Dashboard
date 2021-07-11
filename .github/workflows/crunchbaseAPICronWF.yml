@@ -16,6 +16,10 @@ jobs:
         with:
           python-version: '3.x' # install the python version needed
     
+      - name: Install dependencies
+        run: |
+          python -m pip install requests
+          
       - name: Execute Cruncbase API script
         run:
           python OC_Crunchbase_Queries.py
