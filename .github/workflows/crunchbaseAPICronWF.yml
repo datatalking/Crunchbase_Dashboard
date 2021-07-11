@@ -18,7 +18,7 @@ jobs:
     
       - name: Execute Cruncbase API script
         run:
-          python OC_Crunchbase_Queries.ipynb
+          python OC_Crunchbase_Queries.py
         shell: python
        # uses: yaananth/run-notebook@v1
         #env:
