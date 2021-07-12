@@ -30,6 +30,8 @@ def main(argv):
    arg_aws_access_key_id = str(sys.argv[1])
    arg_aws_secret_access_key = str(sys.argv[2])
    arg_region_name = str(sys.argv[3])
+
+   print ("Region name: %s" % str(sys.argv[3]))
    
 def get_date():
     now = datetime.now()
