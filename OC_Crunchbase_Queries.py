@@ -333,9 +333,9 @@ master_clean_orgs.to_csv(fileNameOrgs)
 # Write to Amazon S3
 s3 = boto3.resource(
     service_name='s3',
-    region_name='arg_region_name',
-    aws_access_key_id='arg_aws_access_key_id',
-    aws_secret_access_key='arg_aws_secret_access_key'
+    region_name=arg_region_name,
+    aws_access_key_id=arg_aws_access_key_id,
+    aws_secret_access_key=arg_aws_secret_access_key
 )
 
 # Upload files to S3 bucket
