@@ -25,11 +25,16 @@ jobs:
           
       - name: Execute Cruncbase API script
         env:
+          FUNDING_URL: ${{ secrets.FUNDING_URL }}
+          ORGS_URL: ${{ secrets.ORGS_URL }}
+          USERKEY: ${{ secrets.USERKEY }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           REGION_NAME: ${{ secrets.REGION_NAME }}
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+          
         run:
-          python OC_Crunchbase_Queries.py "$AWS_ACCESS_KEY_ID" "$AWS_SECRET_ACCESS_KEY" "$REGION_NAME"
+          python OC_Crunchbase_Queries.py "$FUNDING_URL" "$ORGS_URL" "$USERKEY" "$AWS_ACCESS_KEY_ID" "$AWS_SECRET_ACCESS_KEY" "$REGION_NAME" "$S3_BUCKET_NAME"
         #shell: python
        # uses: yaananth/run-notebook@v1
         #env:

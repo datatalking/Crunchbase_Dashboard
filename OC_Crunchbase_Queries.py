@@ -57,9 +57,9 @@ categories_names = csv_to_list('categories_uuids_new.csv',["Category", "UUID"],"
 # In[2]:
 
 
-funding_url = 'https://api.crunchbase.com/api/v4/searches/funding_rounds/'
-orgs_url = 'https://api.crunchbase.com/api/v4/searches/organizations/'
-userkey = {'user_key': 'e9c8281d895370047ce730debef4c2f0'}
+funding_url = str(sys.argv[1])
+orgs_url = str(sys.argv[2])
+userkey = {'user_key': str(sys.argv[3])}
 
 
 # ### Queries
@@ -331,9 +331,10 @@ master_clean_orgs.to_csv(fileNameOrgs)
 
 # Write to Amazon S3
 
-arg_aws_access_key_id = str(sys.argv[1])
-arg_aws_secret_access_key = str(sys.argv[2])
-arg_region_name = str(sys.argv[3])
+arg_aws_access_key_id = str(sys.argv[4])
+arg_aws_secret_access_key = str(sys.argv[5])
+arg_region_name = str(sys.argv[6])
+s3_bucket_name = str(sys.argv[7])
 
 s3 = boto3.resource(
     service_name='s3',
@@ -343,7 +344,7 @@ s3 = boto3.resource(
 )
 
 # Upload files to S3 bucket
-s3.Bucket('crunchbase-dashboard').upload_file(Filename=fileNameOrgs, Key=fileNameOrgs)
+s3.Bucket(s3_bucket_name).upload_file(Filename=fileNameOrgs, Key=fileNameOrgs)
 
 # In[ ]:
 
