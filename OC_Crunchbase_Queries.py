@@ -19,10 +19,18 @@ import boto3
 import sys
 import json
 import csv
+import getopt
 from pandas.io.json import json_normalize 
 from operator import itemgetter
 from datetime import datetime, date, time
 
+# Parse input arguements
+
+def main(argv):
+   arg_aws_access_key_id = str(sys.argv[0])
+   arg_aws_secret_access_key = str(sys.argv[1])
+   arg_region_name = str(sys.argv[2])
+   
 def get_date():
     now = datetime.now()
     date = str(now.strftime('%Y-%m-%d'))
@@ -323,9 +331,9 @@ master_clean_orgs.to_csv(fileNameOrgs)
 # Write to Amazon S3
 s3 = boto3.resource(
     service_name='s3',
-    region_name='us-west-1',
-    aws_access_key_id='AKIAQAFQCVI6QFETODIQ',
-    aws_secret_access_key='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'
+    region_name = arg_region_name,
+    aws_access_key_id = arg_aws_access_key_id,
+    aws_secret_access_key = arg_aws_secret_access_key
 )
 
 # Upload files to S3 bucket
