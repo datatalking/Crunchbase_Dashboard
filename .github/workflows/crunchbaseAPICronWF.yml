@@ -35,4 +35,21 @@ jobs:
           
         run:
           python OC_Crunchbase_Queries.py "$FUNDING_URL" "$ORGS_URL" "$USERKEY" "$AWS_ACCESS_KEY_ID" "$AWS_SECRET_ACCESS_KEY" "$REGION_NAME" "$S3_BUCKET_NAME"
+        #shell: python
+       # uses: yaananth/run-notebook@v1
+        #env:
+         # RUNNER: ${{ toJson(runner) }}
+          #SECRETS: ${{ toJson(secrets) }}
+          #GITHUB: ${{ toJson(github) }}
+        #with:
+         # notebook: "OC_Crunchbase_Queries.ipynb.ipynb"
         
+     # - name: commit files
+     #   run: |
+     #     git add -A
+     #     git commit -m "update data" -a
+          
+     # - name: push changes
+     #   uses: ad-m/github-push-action@v0.6.0
+     #   with:
+     #     branch: main  
