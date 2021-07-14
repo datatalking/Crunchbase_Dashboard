@@ -335,7 +335,7 @@ arg_aws_access_key_id = str(sys.argv[4])
 arg_aws_secret_access_key = str(sys.argv[5])
 arg_region_name = str(sys.argv[6])
 s3_bucket_name = str(sys.argv[7])
-
+print(arg_aws_access_key_id)
 s3 = boto3.resource(
     service_name='s3',
     region_name=arg_region_name,
