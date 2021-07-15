@@ -325,7 +325,8 @@ master_clean_orgs["location_city"] = master_clean_orgs["location_identifiers"].a
 # Generates a name (including the date) for the file
 # fileNameFunding = "crunchbase_funding_rounds_" + get_date() + ".csv"
 # master_clean_funding.to_csv(fileNameFunding)
-fileNameOrgs = "crunchbase_organizations_" + get_date() + ".csv"
+#fileNameOrgs = "crunchbase_organizations_" + get_date() + ".csv"
+fileNameOrgs = "crunchbase_organizations.csv"
 master_clean_orgs.to_csv(fileNameOrgs)
 
 
