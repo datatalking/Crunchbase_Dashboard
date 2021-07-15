@@ -32,7 +32,6 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           REGION_NAME: ${{ secrets.REGION_NAME }}
           S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
-          
         run:
           python OC_Crunchbase_Queries.py "$FUNDING_URL" "$ORGS_URL" "$USERKEY" "$AWS_ACCESS_KEY_ID" "$AWS_SECRET_ACCESS_KEY" "$REGION_NAME" "$S3_BUCKET_NAME"
         #shell: python
