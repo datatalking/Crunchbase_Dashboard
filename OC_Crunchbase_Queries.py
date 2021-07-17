@@ -326,7 +326,7 @@ master_clean_orgs["location_city"] = master_clean_orgs["location_identifiers"].a
 # fileNameFunding = "crunchbase_funding_rounds_" + get_date() + ".csv"
 # master_clean_funding.to_csv(fileNameFunding)
 #fileNameOrgs = "crunchbase_organizations_" + get_date() + ".csv"
-fileNameOrgs = "datafile/crunchbase_organizations.csv"
+fileNameOrgs = "crunchbase_organizations.csv"
 master_clean_orgs.to_csv(fileNameOrgs)
 
 
@@ -345,7 +345,7 @@ s3 = boto3.resource(
 )
 
 # Upload files to S3 bucket
-s3.Bucket(s3_bucket_name).upload_file(Filename=fileNameOrgs, Key=fileNameOrgs)
+s3.Bucket(s3_bucket_name).upload_file(Filename=fileNameOrgs, Key="datafile/"+fileNameOrgs)
 
 # In[ ]:
 
