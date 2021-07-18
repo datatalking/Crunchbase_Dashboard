@@ -330,7 +330,7 @@ index.name = "id"
 # master_clean_funding.to_csv(fileNameFunding)
 #fileNameOrgs = "crunchbase_organizations_" + get_date() + ".csv"
 fileNameOrgs = "crunchbase_organizations.csv"
-master_clean_orgs.to_csv(fileNameOrgs,escapechar='\\')
+master_clean_orgs.to_csv(fileNameOrgs,escapeChar='\\')
 
 
 # Write to Amazon S3
