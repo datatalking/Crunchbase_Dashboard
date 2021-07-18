@@ -322,7 +322,8 @@ master_clean_orgs["location_city"] = master_clean_orgs["location_identifiers"].a
 # Inspect the data
 # master_clean_orgs.info()
 # Add id as first column header
-master_clean_orgs.reset_index(drop=True, inplace=True)
+index = master_clean_orgs.index
+index.name = "id"
 
 # Generates a name (including the date) for the file
 # fileNameFunding = "crunchbase_funding_rounds_" + get_date() + ".csv"
