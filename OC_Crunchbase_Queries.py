@@ -327,7 +327,7 @@ master_clean_orgs["location_city"] = master_clean_orgs["location_identifiers"].a
 # master_clean_funding.to_csv(fileNameFunding)
 #fileNameOrgs = "crunchbase_organizations_" + get_date() + ".csv"
 fileNameOrgs = "crunchbase_organizations.csv"
-master_clean_orgs.to_csv(fileNameOrgs)
+master_clean_orgs.to_csv(fileNameOrgs,quotechar='"')
 
 
 # Write to Amazon S3
