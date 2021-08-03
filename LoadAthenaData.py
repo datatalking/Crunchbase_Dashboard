@@ -1,4 +1,6 @@
+import pandas as pd
 import boto3
+import sys
 
 ddl_script_name = str(sys.argv[1])
 arg_aws_access_key_id = str(sys.argv[2])

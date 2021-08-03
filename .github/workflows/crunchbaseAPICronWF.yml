@@ -54,7 +54,10 @@ jobs:
      
       - name: Load data to Athena
         env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          REGION_NAME: ${{ secrets.REGION_NAME }}
           S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run:
-          python LoadAthenaData.py "crunchbase_organizations.ddl" "$S3_BUCKET_NAME"
+          python LoadAthenaData.py "crunchbase_organizations.ddl" "$AWS_ACCESS_KEY_ID" "$AWS_SECRET_ACCESS_KEY" "$REGION_NAME" "$S3_BUCKET_NAME"
          
