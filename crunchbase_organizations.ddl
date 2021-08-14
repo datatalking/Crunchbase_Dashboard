@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS crunchbase_dashboard.crunchbase_organizations;
+
 CREATE EXTERNAL TABLE crunchbase_dashboard.crunchbase_organizations (
   `id` string,
   `uuid` string,
