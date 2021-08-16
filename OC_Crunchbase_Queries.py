@@ -329,8 +329,7 @@ index.name = "id"
 if not master_clean_orgs.columns.is_unique:
     master_clean_orgs.loc[:, ~master_clean_orgs.columns.duplicated()]
 
-reqColumnList = ['id','uuid','company_type','founded_on.precision','founded_on','equity_funding_total','identifier','ipo_status','category_groups','short_description','num_investors','operating_status','num_employees_enum','funding_total','num_funding_rounds','last_equity_funding_type','last_funding_type','categories','location_identifiers','last_funding_at','last_equity_funding_total','funding_stage','last_funding_total','revenue_range','exited_on.precision','exited_on','valuation','investor_type','listed_stock_symbol','num_funds','funds_total','num_employees_range','location_city']
-master_clean_orgs = master_clean_orgs.reindex(columns=reqColumnList)
+master_clean_orgs = master_clean_orgs[['id','uuid','company_type','founded_on.precision','founded_on','equity_funding_total','identifier','ipo_status','category_groups','short_description','num_investors','operating_status','num_employees_enum','funding_total','num_funding_rounds','last_equity_funding_type','last_funding_type','categories','location_identifiers','last_funding_at','last_equity_funding_total','funding_stage','last_funding_total','revenue_range','exited_on.precision','exited_on','valuation','investor_type','listed_stock_symbol','num_funds','funds_total','num_employees_range','location_city']]
 
 # Generates a name (including the date) for the file
 # fileNameFunding = "crunchbase_funding_rounds_" + get_date() + ".csv"
