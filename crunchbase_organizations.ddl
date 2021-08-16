@@ -35,7 +35,7 @@ CREATE EXTERNAL TABLE crunchbase_dashboard.crunchbase_organizations (
   `location_city` string 
 )
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
-WITH SERDEPROPERTIES ("separatorChar" = ",", "escapeChar" = "\\")
+WITH SERDEPROPERTIES ("separatorChar" = ",", "quoteChar" = "\"")
 STORED AS TEXTFILE 
 LOCATION 's3://crunchbase-dashboard/datafile/'
 TBLPROPERTIES ('has_encrypted_data'='false','skip.header.line.count'='1');
