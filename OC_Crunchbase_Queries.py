@@ -326,7 +326,7 @@ index = master_clean_orgs.index
 index.name = "id"
 
 #Reorder columns for AWS S3 bucket
-if(!master_clean_orgs.columns.is_unique)
+if not master_clean_orgs.columns.is_unique:
 {
     master_clean_orgs.loc[:, ~master_clean_orgs.columns.duplicated()]
 }
