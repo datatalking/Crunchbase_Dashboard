@@ -1,8 +1,10 @@
 name: Crunchbase dashboard Cron Workflow
 
-on: [push]
   #schedule:
-  #- cron: "0/5 1 * * *"
+#on: [push]
+on:
+  schedule:
+  - cron: "0 1 * * *"
   
 jobs:
   run-Crunchbase-dataExtract:
